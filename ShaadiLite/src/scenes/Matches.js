@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Icon } from "native-base";
+import { Icon, Container, Content } from "native-base";
+import CardComponent from '../components/CardComponent'
 
-
-export default class Matches extends React.Component {
+export default class Matches extends Component {
 
     static navigationOptions = {
 
@@ -16,9 +16,13 @@ export default class Matches extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.text}>Matches</Text>
-            </View>
+            <Container style={styles.container}>
+                <Content>
+                    <CardComponent imageSource="1" likes="101" />
+                    <CardComponent imageSource="2" likes="101" />
+                    <CardComponent imageSource="3" likes="101" />
+                </Content>
+            </Container>
         );
     }
 }
@@ -26,14 +30,7 @@ export default class Matches extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#8a3ab9',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'white'
     },
-    text: {
-        color: "white",
-        fontSize: 50,
-        opacity:0.6,
-    }
 });
 
