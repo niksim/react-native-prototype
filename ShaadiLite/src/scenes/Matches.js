@@ -26,7 +26,8 @@ export default class Matches extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#8a3ab9',
+//        backgroundColor: '#8a3ab9',
+	backgroundColor: '#e2e2e2',
         alignItems: 'center',
         justifyContent: 'center',
     },
