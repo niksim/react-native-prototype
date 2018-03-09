@@ -22,7 +22,7 @@ class CardComponent extends Component {
                     <ImageBackground source={images[this.props.imageSource]} style={{ width: null, height: 200, flex: 1 ,justifyContent: "flex-end"}}>
                         <View style={{ marginBottom: 0, width: null, height: 100, flexDirection: "row" }}>
                             <LinearGradient
-                                colors={['rgba(2.0,2.0,2.0,1.0)', 'transparent']}
+                                colors={['rgba(2.0,2.0,2.0,1.0)','rgba(2.0,2.0,2.0,1.0)']}
                                 style={{
                                     position: 'absolute',
                                     left: 0,
