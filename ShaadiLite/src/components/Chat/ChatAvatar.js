@@ -1,26 +1,26 @@
-import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import React from "react"
+import { View, Image, StyleSheet } from "react-native"
 
 export default class ChatAvatar extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   getPlaceHolderImage = () => {
     var icon =
-      this.props.profile.gender == 'female'
-        ? require('../../assets/Silhouette_Female.png')
-        : require('../../assets/Silhouette_Male.png');
-    return icon;
-  };
+      this.props.profile.gender == "female"
+        ? require("../../assets/Silhouette_Female.png")
+        : require("../../assets/Silhouette_Male.png")
+    return icon
+  }
 
   getChatStatusImage = () => {
     var icon =
-      this.props.profile.gender == 'female'
-        ? require('../../assets/chatStatusIdle.png')
-        : require('../../assets/chatStatusOnline.png');
-    return icon;
-  };
+      this.props.profile.gender == "female"
+        ? require("../../assets/chatStatusIdle.png")
+        : require("../../assets/chatStatusOnline.png")
+    return icon
+  }
 
   render() {
     return (
@@ -36,13 +36,13 @@ export default class ChatAvatar extends React.Component {
             marginTop: 37,
             height: 13,
             width: 13,
-            backgroundColor: 'white',
+            backgroundColor: "white",
             borderRadius: 6
           }}
           source={this.getChatStatusImage()}
         />
       </View>
-    );
+    )
   }
 }
 
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 25,
-    position: 'absolute'
+    position: "absolute"
   }
-});
+})

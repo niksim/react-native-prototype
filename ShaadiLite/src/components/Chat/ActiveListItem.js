@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import ChatAvatar from './ChatAvatar';
+import React, { Component } from "react"
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import ChatAvatar from "./ChatAvatar"
 export default class ActiveListItem extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
-  didSelectUser = () => {};
+  didSelectUser = () => {}
 
   render() {
     return (
@@ -20,6 +20,7 @@ export default class ActiveListItem extends Component {
             <Text style={styles.userName}>{`${this.props.profile.name.title} ${
               this.props.profile.name.first
             } ${this.props.profile.name.last}`}</Text>
+            <Text style={styles.profession}>{`Marketing Professional`}</Text>
             <Text style={styles.ageCity}>{`30yrs, ${
               this.props.profile.location.city
             }`}</Text>
@@ -27,44 +28,53 @@ export default class ActiveListItem extends Component {
           </View>
         </TouchableOpacity>
       </View>
-    );
+    )
   }
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    height: 70
+    flexDirection: "row",
+    height: 70,
+    backgroundColor: "white"
   },
   cellTouch: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 70,
-    alignItems: 'flex-start'
+    alignItems: "flex-start"
   },
   textContainer: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: "column"
   },
   userName: {
-    color: '#51505d',
-    fontSize: 14,
-    fontWeight: '500',
+    color: "#51505d",
+    fontSize: 15,
+    fontWeight: "500",
     marginLeft: 10,
-    marginTop: 10
+    marginTop: 5
   },
   ageCity: {
-    color: '#72727d',
-    fontSize: 12,
-    fontWeight: '400',
+    color: "#72727d",
+    fontSize: 13,
+    fontWeight: "400",
     marginLeft: 10,
-    marginTop: 10
+    marginTop: 1
+  },
+  profession: {
+    color: "#72727d",
+    fontSize: 13,
+    fontWeight: "400",
+    marginLeft: 10,
+    marginTop: 3
   },
   seperator: {
-    backgroundColor: '#dfe0e3',
+    backgroundColor: "#dfe0e3",
     height: 1,
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     marginLeft: 10,
-    marginTop: 14
+    marginTop: 10,
+    marginRight: 20
   }
-});
+})
