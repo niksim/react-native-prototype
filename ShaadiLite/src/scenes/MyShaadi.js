@@ -2,11 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'native-base';
 import TabBarIconView from '../components/TabBarIconView';
+import SHCarouselProfile from '../components/SHCarouselProfile';
 
 export default class MyShaadi extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ focused }) => (
       <TabBarIconView tabIndex={0} focused={focused} />
+      
+      
     )
   };
 
@@ -14,6 +17,7 @@ export default class MyShaadi extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>MyShaadi</Text>
+        <SHCarouselProfile section="Recently Joined"/>
       </View>
     );
   }
@@ -22,7 +26,7 @@ export default class MyShaadi extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fccc63',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center'
   },
