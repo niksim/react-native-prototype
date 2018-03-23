@@ -1,32 +1,15 @@
-import React from "react"
-import { StyleSheet, Text, View, Image } from "react-native"
-import { Icon } from "native-base"
-import ChatHeader from "../components/Chat/ChatHeaders"
-import RecentActiveToggle from "../components/Chat/RecentActiveToggle"
-
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Icon } from 'native-base';
+import ChatHeader from '../components/Chat/ChatHeaders';
+import RecentActiveToggle from '../components/Chat/RecentActiveToggle';
+import TabBarIconView from '../components/TabBarIconView';
 export default class Conversation extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ focused }) => (
-      <View style={styles.tabItemContainter}>
-        <Image
-          style={styles.image}
-          source={
-            focused
-              ? require("../assets/conversations_on.png")
-              : require("../assets/conversations_off.png")
-          }
-        />
-        <Text
-          style={{
-            fontSize: 12,
-            color: focused ? "#f85842" : "#72727D"
-          }}
-        >
-          Conversation
-        </Text>
-      </View>
+      <TabBarIconView tabIndex={3} focused={focused} />
     )
-  }
+  };
 
   render() {
     return (
@@ -34,7 +17,7 @@ export default class Conversation extends React.Component {
         <ChatHeader />
         <RecentActiveToggle />
       </View>
-    )
+    );
   }
 }
 
@@ -59,7 +42,7 @@ export default class Conversation extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#cd486b"
+    backgroundColor: '#cd486b'
   },
   tabItemContainter: {
     flex: 1
@@ -67,7 +50,7 @@ const styles = StyleSheet.create({
   image: {
     height: 28,
     width: 28,
-    alignSelf: "center",
-    resizeMode: "contain"
+    alignSelf: 'center',
+    resizeMode: 'contain'
   }
-})
+});
