@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View  } from 'react-native';
 import { Icon } from 'native-base';
 import TabBarIconView from '../components/TabBarIconView';
-import ChatHeader from "../components/Chat/ChatHeaders"
+import ScreenHeader from "../common/components/ScreenHeader"
+import MyShaadiProfileCell from "../components/Profile/MyShaadiProfileCell"
+import ProfileImage from "../components/Profile/ProfileImage"
 
 export default class MyShaadi extends React.Component {
+  
   static navigationOptions = {
     tabBarIcon: ({ focused }) => (
       <TabBarIconView tabIndex={0} focused={focused} />
@@ -14,23 +17,24 @@ export default class MyShaadi extends React.Component {
   render() {
     return (
         <View style={styles.container}>
-        <ChatHeader />
-        <View style={{paddingTop:10}}>
-                <View style={{flexDirection: 'row'}}>
-                    <View style={{flex:1,alignItems:'center'}}>
-                        <Image source={require('../assets/Silhouette_Male.png')} style={{width:75,height:75, borderRadius:37.5}}/> 
-                    </View>
-                    <View style={{flex:3}}>
-                        {/* Custom ProfileView Class to show basic info */}
-                        {/* <ProfileView name="Poonam,Priyanka,Sanket" expertise = "iOS | Hybrid | Android | React"  emailid="poonam.pandey@peopleinterative.in"/> */}
-                    </View>
+                <ScreenHeader  title="MyShaadi"/>
+                <View style={styles.profileCell}>
+                        <View style={{flexDirection: 'row'}}>
+                            <View>
+                              <ProfileImage imageLink="https://img1.shaadi.com//2018/02/07/2SH21657426-a0cab7-female.jpg" gender= "female"/> 
+                            </View>
+                            <View style={styles.profileDetails}>
+                                {/* Custom ProfileView Class to show basic info */}
+                                <MyShaadiProfileCell accountType="Platinum Plus" fullName="Poonam P" valueShId="sh52654789" expiryDate="30-Sep-18"/>
+                                {/* Upgrade Now */}
+                            </View>
+                        </View>
+                </View>  
+                {/* Custom Button Class With Global Active Index Object*/}
+                <View style={{flexDirection:'row', justifyContent:'space-around',borderTopWidth:1,borderTopColor:"#e2e2e2"}}>
+                
                 </View>
-        </View>  
-        {/* Custom Button Class With Global Active Index Object*/}
-        <View style={{flexDirection:'row', justifyContent:'space-around',borderTopWidth:1,borderTopColor:"#e2e2e2"}}>
-        
-        </View>
-    </View>
+          </View>
     );
   }
 }
@@ -39,12 +43,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    // alignItems: 'center',
-    // justifyContent: 'center'
   },
-  text: {
-    color: '#bc2a8d',
-    fontSize: 50,
-    opacity: 0.6
+  profileCell: {
+    backgroundColor: 'gray',
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 15,
+  },
+  profileDetails: {
+    paddingLeft: 15,
   }
 });
