@@ -2,12 +2,11 @@
 
 import React, { Component } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import SentItemCardComponent from "../SHCarousel/SentItemCardComponent";
+import SentItemCardComponent from "../SentItemCardComponent";
 import EmptyView from "../Chat/EmtpyView";
 import axios from "axios";
 
-export default class SentItem
- extends Component {
+export default class SentItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +40,6 @@ export default class SentItem
 
   render() {
     return (
-      
       <View style={styles.container}>
         <FlatList
           ListEmptyComponent={
