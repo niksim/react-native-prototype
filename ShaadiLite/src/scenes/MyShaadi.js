@@ -30,9 +30,9 @@ export default class MyShaadi extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
-          <View style={styles.statusBar} />
           <ScreenHeader title="MyShaadi" />
+          <ScrollView>
+
           <ImageBackground
             style={styles.profileCell}
             source={{
