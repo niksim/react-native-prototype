@@ -4,7 +4,8 @@ import {
   Text,
   View,
   ImageBackground,
-  ScrollView
+  ScrollView,
+  Platform
 } from "react-native";
 import { Icon } from "native-base";
 import TabBarIconView from "../components/TabBarIconView";
@@ -30,9 +31,11 @@ export default class MyShaadi extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-          <ScreenHeader title="MyShaadi" />
-          <ScrollView>
-
+        {Platform.OS === "android" && Platform.Version >= 20 ? (
+          <View style={styles.statusBar} />
+        ) : null}
+        <ScreenHeader title="MyShaadi" />
+        <ScrollView>
           <ImageBackground
             style={styles.profileCell}
             source={{
@@ -100,7 +103,7 @@ export default class MyShaadi extends React.Component {
 
 const styles = StyleSheet.create({
   statusBar: {
-    backgroundColor: "#C2185B",
+    backgroundColor: "#99363a",
     height: Constants.statusBarHeight
   },
   container: {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 
 import InboxContainer from "./InboxContainer";
 import TabBarIconView from "../components/TabBarIconView";
@@ -17,7 +17,9 @@ export default class Inbox extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.statusBar} />
+        {Platform.OS === "android" && Platform.Version >= 20 ? (
+          <View style={styles.statusBar} />
+        ) : null}
         <InboxContainer />
       </View>
     );
@@ -26,7 +28,7 @@ export default class Inbox extends Component {
 
 const styles = StyleSheet.create({
   statusBar: {
-    backgroundColor: "#C2185B",
+    backgroundColor: "#99363a",
     height: Constants.statusBarHeight
   },
   container: {
