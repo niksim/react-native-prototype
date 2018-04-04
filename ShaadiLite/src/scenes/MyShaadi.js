@@ -41,54 +41,15 @@ export default class MyShaadi extends React.Component {
           <View style={styles.profileFaceContainer}>
             <ProfileFaceCell/>
           </View>
+          <OptionAndSettings header='Options and Settings' data={profileCompletenessData}/>
+
           {/* Custom Button Class With Global Active Index Object*/}
-<<<<<<< HEAD
-
-
-
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
-              borderTopWidth: 1,
-              borderTopColor: "#e2e2e2"
-            }}
-          >
-           <OptionAndSettings header = 'Complete Your Profile' data={profileCompletenessData}/>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
-              borderTopWidth: 1,
-              borderTopColor: "#e2e2e2"
-            }}
-          >
-          
-            <SHCarouselProfile section="Premium Matches" />
-          </View>
-
-
-          
-
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
-              borderTopWidth: 1,
-              borderTopColor: "#e2e2e2"
-            }}
-          >
-=======
+ 
           <View style={styles.carouselContainer}>
             <SHCarouselProfile section="Premium Matches" />
           </View>
           <View style={styles.carouselContainer}>
->>>>>>> a7edd0d7b26741d53a3b80e0b6ee2dcaffc9372b
-            <SHCarouselProfile section="Recently Joined" />
+             <SHCarouselProfile section="Recently Joined" />
           </View>
           <View style={styles.carouselContainer}>
             <SHCarouselProfile section="Recently Visitors" />

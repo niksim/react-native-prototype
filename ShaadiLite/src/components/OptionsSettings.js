@@ -5,9 +5,18 @@ import { View, Text, FlatList, StyleSheet } from "react-native";
 import { List, ListItem } from "react-native-elements";
 
 import { settingsMenuData } from "../Data/SettingMenuData";
-
+import MyShaadiProfileCell from "./Profile/MyShaadiProfileCell";
+import Icon from 'react-native-vector-icons/Ionicons';
+import Image from 'react-native'
+//import { settings } from "cluster";
 export default class OptionsAndSettings extends Component {
   render() {
+
+     
+
+    if(this.props.data.length > 0){
+
+    
     return (
       <View style={styles.container}>
         <View
@@ -21,16 +30,22 @@ export default class OptionsAndSettings extends Component {
             alignSelf: "stretch"
           }}
         >
-          <Text>Options & Settings</Text>
+          <Text>{this.props.header}</Text>
         </View>
         <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
           <FlatList
-            data={settingsMenuData}
+            data={this.props.data}
             renderItem={({ item }) => (
-              <ListItem
-                title={`${item.value}`}
+              <ListItem  titleNumberOfLines ={2}  style ={MyShaadiProfileCell.shIdCell}
+
+             // avatar= {require('../assets/101.png')} avatarStyle={{borderRadius:0, height:20, width:20 }}
+        
+                title={`${item.value}` } style ={MyShaadiProfileCell.shIdCell}
                 containerStyle={{ borderBottomWidth: 0 }}
-                leftIcon={{ name: getOptionImage(item.id) }}
+                leftIcon = {{name:getOptionImage(item.id)}}
+               // leftIcon={ <Icon  name = {require("../assets/chat")} />}
+                //avatar={getOptionImage(item.id)}
+               // avatar = {{uri:getOptionImage(item.id)}}
               />
             )}
             keyExtractor={item => item.id}
@@ -40,14 +55,17 @@ export default class OptionsAndSettings extends Component {
       </View>
     );
   }
+  }
 }
 
 getOptionImage = id => {
-  var icon = "settings";
+  var icon = 'settings'
   // switch (id) {
-  //   case 0:
-  //     icon = "Pass icon here";
+  //     case 101:
+  //     icon = require("../assets/chatStatusIdle.png")
   //     break;
+  //     case 102:
+  //     icon = require("../assets/chatStatusIdle.png")
   //   default:
   //     break;
   // }

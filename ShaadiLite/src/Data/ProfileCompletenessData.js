@@ -9,7 +9,7 @@ const profileCompletenessData = [
     },
     {
       id: "103",
-      value: "Account Settings"
+      value: "Add Horoscope and get more responses"
     }
   ];
   
