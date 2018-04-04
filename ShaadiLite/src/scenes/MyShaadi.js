@@ -18,6 +18,8 @@ import OptionAndSettings from "../components/OptionsSettings";
 
 import CopyRightView from "../components/CopyRightsView";
 
+import { settingsMenuData ,profileCompletenessData} from "../Data/SettingMenuData";
+ 
 import { Constants } from "expo";
 
 export default class MyShaadi extends React.Component {
@@ -60,6 +62,10 @@ export default class MyShaadi extends React.Component {
             </View>
           </ImageBackground>
           {/* Custom Button Class With Global Active Index Object*/}
+
+
+
+
           <View
             style={{
               flexDirection: "row",
@@ -68,8 +74,25 @@ export default class MyShaadi extends React.Component {
               borderTopColor: "#e2e2e2"
             }}
           >
+           <OptionAndSettings header = 'Complete Your Profile' data={profileCompletenessData}/>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-around",
+              borderTopWidth: 1,
+              borderTopColor: "#e2e2e2"
+            }}
+          >
+          
             <SHCarouselProfile section="Premium Matches" />
           </View>
+
+
+          
+
+
           <View
             style={{
               flexDirection: "row",
@@ -90,7 +113,7 @@ export default class MyShaadi extends React.Component {
           >
             <SHCarouselProfile section="Recently Visitors" />
           </View>
-          <OptionAndSettings />
+          <OptionAndSettings header='Options and Settings' data={settingsMenuData}/>
           <CopyRightView />
         </ScrollView>
       </View>
