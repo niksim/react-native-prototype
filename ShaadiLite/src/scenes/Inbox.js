@@ -1,33 +1,37 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Icon } from 'native-base';
-import TabBarIconView from '../components/TabBarIconView';
+/* @flow */
 
-export default class Inbox extends React.Component {
+import React, { Component } from "react";
+import { View, Text, StyleSheet, Platform } from "react-native";
+
+import InboxContainer from "./InboxContainer";
+import TabBarIconView from "../components/TabBarIconView";
+import { Constants } from "expo";
+
+export default class Inbox extends Component {
   static navigationOptions = {
     tabBarIcon: ({ focused }) => (
       <TabBarIconView tabIndex={2} focused={focused} />
     )
   };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Inbox</Text>
+        {Platform.OS === "android" && Platform.Version >= 20 ? (
+          <View style={styles.statusBar} />
+        ) : null}
+        <InboxContainer />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#e95950',
-    alignItems: 'center',
-    justifyContent: 'center'
+  statusBar: {
+    backgroundColor: "#99363a",
+    height: Constants.statusBarHeight
   },
-  text: {
-    color: 'yellow',
-    fontSize: 50,
-    opacity: 0.6
+  container: {
+    flex: 1
   }
 });
