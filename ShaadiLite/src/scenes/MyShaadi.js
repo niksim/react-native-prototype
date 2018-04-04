@@ -41,7 +41,7 @@ export default class MyShaadi extends React.Component {
           <View style={styles.profileFaceContainer}>
             <ProfileFaceCell/>
           </View>
-          <OptionAndSettings header='Options and Settings' data={profileCompletenessData}/>
+          <OptionAndSettings header='Complete your Profile' data={profileCompletenessData}/>
 
           {/* Custom Button Class With Global Active Index Object*/}
  
