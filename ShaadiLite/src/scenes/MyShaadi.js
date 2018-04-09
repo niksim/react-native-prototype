@@ -19,6 +19,8 @@ import OptionAndSettings from "../components/OptionsSettings";
 import CopyRightView from "../components/CopyRightsView";
 import ProfileFaceCell from "../components/Profile/ProfileFaceCell";
 
+import { settingsMenuData ,profileCompletenessData} from "../Data/SettingMenuData";
+ 
 import { Constants } from "expo";
 
 export default class MyShaadi extends React.Component {
@@ -39,17 +41,20 @@ export default class MyShaadi extends React.Component {
           <View style={styles.profileFaceContainer}>
             <ProfileFaceCell/>
           </View>
+          <OptionAndSettings header='Complete your Profile' data={profileCompletenessData}/>
+
           {/* Custom Button Class With Global Active Index Object*/}
+ 
           <View style={styles.carouselContainer}>
             <SHCarouselProfile section="Premium Matches" />
           </View>
           <View style={styles.carouselContainer}>
-            <SHCarouselProfile section="Recently Joined" />
+             <SHCarouselProfile section="Recently Joined" />
           </View>
           <View style={styles.carouselContainer}>
             <SHCarouselProfile section="Recently Visitors" />
           </View>
-          <OptionAndSettings />
+          <OptionAndSettings header='Options and Settings' data={settingsMenuData}/>
           <CopyRightView />
         </ScrollView>
       </View>
