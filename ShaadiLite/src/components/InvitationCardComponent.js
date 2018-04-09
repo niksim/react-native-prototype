@@ -7,55 +7,64 @@ import ProfileImage from "./Profile/ProfileImage";
 
 export default class InvitationCardComponent extends Component {
   render() {
-
-    const placeholder = this.props.profile.picture.large ? this.props.profile.picture.large : "https://icons.iconarchive.com/icons/paomedia/small-n-flat/72/profile-icon.png"
-    
+    const placeholder = this.props.profile.picture.large
+      ? this.props.profile.picture.large
+      : "https://icons.iconarchive.com/icons/paomedia/small-n-flat/72/profile-icon.png";
 
     var icon = require("../assets/request_off.png");
     return (
       <Card>
         <CardItem cardBody>
-        <View style={{ flexDirection: "column",alignSelf: "center" }}>
-        <View style={[styles.imageCircle]}>
-                <ProfileImage
-                  imageLink={placeholder}
-                  gender="female"
-                />
-              </View>
-            
+          <View
+            style={{
+              flexDirection: "column",
+              flex: 1,
+              alignSelf: "center",
+              padding: 10
+            }}
+          >
+            <View style={[styles.imageCircle]}>
+              <ProfileImage imageLink={placeholder} gender="female" />
+            </View>
+
             <View>
-            <Text id="name" style={styles.nameTextStyle}>
-            {this.props.profile.name.first +
+              <Text id="name" style={styles.nameTextStyle}>
+                {this.props.profile.name.first +
                   " " +
                   this.props.profile.name.last}
-                  </Text>
+              </Text>
             </View>
-            <View>
-            <Text id="info1" >
-            28 yrs, 5'3",Hindi,Rajput
-                  </Text>
+            <View style={styles.txtInfoStyle}>
+              <Text id="info1">28 yrs, 5'3",Hindi,Rajput</Text>
+
+              <Text id="info2">Other,India,Bachelors - Science</Text>
+
+              <Text id="info3">Software Developer / Programmer</Text>
             </View>
-            <View>
-            <Text id="info2" >
-            Other,India,Bachelors - Science
-                  </Text>
-            </View>
-            <View>
-            <Text id="info3" >
-           Software Developer / Programmer
-                  </Text>
-            </View>
-            <View style={{ flexDirection: "row",alignSelf: "center" }}>
-            <Image
-          source={require('/home/seemai/React_Training/react-native-prototype/ShaadiLite/assets/cta/decline_invite.png')}
-        />
-        <Image
-        source={require('/home/seemai/React_Training/react-native-prototype/ShaadiLite/assets/cta/send_interest.png')}
-      />
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "center",
+                marginTop: 15
+              }}
+            >
+              <View style={{ flexDirection: "column" }}>
+                <Image
+                  style={styles.ctaButtonStyle}
+                  source={require("../assets/decline_invite.png")}
+                />
+                <Text style={styles.ctabuttonTextStyle}>Decline</Text>
               </View>
+              <View style={{ flexDirection: "column" }}>
+                <Image
+                  style={styles.ctaButtonStyle}
+                  source={require("../assets/send_interest.png")}
+                />
+                <Text style={styles.ctabuttonTextStyle}>Accept</Text>
+              </View>
+            </View>
           </View>
         </CardItem>
-        
       </Card>
     );
   }
@@ -65,6 +74,10 @@ const styles = StyleSheet.create({
   Maincontainer: {
     flexDirection: "row",
     flex: 1
+  },
+  txtInfoStyle: {
+    flexDirection: "column",
+    alignItems: "center"
   },
   connectTextStyle: {
     backgroundColor: "#F1F1F2",
@@ -112,9 +125,21 @@ const styles = StyleSheet.create({
     resizeMode: "center"
   },
   imageCircle: {
-    height: 60,
+    height: null,
     width: 60,
     alignSelf: "center",
+    alignItems: "center",
+    padding: 10,
     borderRadius: 25
+  },
+  ctaButtonStyle: {
+    marginTop: 15,
+    marginLeft: 20,
+    marginRight: 20
+  },
+  ctabuttonTextStyle: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10
   }
 });

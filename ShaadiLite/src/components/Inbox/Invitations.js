@@ -17,10 +17,10 @@ export default class InvitationScreen extends Component {
   }
 
   componentDidMount() {
-    this.fetchFilteredOutList();
+    this.fetchInvitationList();
   }
 
-  async fetchFilteredOutList() {
+  async fetchInvitationList() {
     const url = `https://randomuser.me/api/?page=1&results=20`;
     this.setState({ loading: true });
 
@@ -43,7 +43,7 @@ export default class InvitationScreen extends Component {
       <View style={styles.container}>
         <FlatList
           ListEmptyComponent={
-            <EmptyView loadertext="Updating FilteredOut List" />
+            <EmptyView loadertext="Updating Invitation List" />
           }
           data={this.state.data}
           renderItem={({ item }) => <InvitationCardComponent profile={item} />}
